@@ -25,7 +25,7 @@ public class GameTimerTask extends TimerTask
         //move all 20 shapes
         for(int x =0 ; x<game.getShapes().length ; x++)
         {
-            game.getShapes()[x].move();;
+            game.move();
         }
 
         gameView.postInvalidate();
