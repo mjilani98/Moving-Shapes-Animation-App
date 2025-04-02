@@ -3,9 +3,10 @@ package com.example.hw4q4;
 public class Game
 {
     //array of shapes
-    private Shape[] shapesArray;
+    private Shape[] shapesArray = new Shape[20];
+
     //number of arrays
-    int numOfShapes;
+    private int numOfShapes;
 
     //public constructor
     public Game()
