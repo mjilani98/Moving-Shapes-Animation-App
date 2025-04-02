@@ -19,8 +19,8 @@ public class Shape
         type = (int) (Math.random()*2)+1 ; // random number between 1 , 2
 
         //Initialize centerX and centerY (location on board)
-        centerX = (int) (Math.random() * 2001); // random number between 0 , 2000
-        centerY = (int) (Math.random() * 2001); // random number between 0 , 2000
+        centerX = (int) (Math.random() * 2001) + 70; // random number between 0 , 2000
+        centerY = (int) (Math.random() * 1001) + 50;// random number between 0 , 1000
 
         //Initialize size of the shape
         size = (int) (Math.random() * 51) + 50; // random number between 50 , 100
