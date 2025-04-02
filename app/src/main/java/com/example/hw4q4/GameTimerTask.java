@@ -2,7 +2,9 @@ package com.example.hw4q4;
 
 import android.app.GameManager;
 
-public class GameTimerTask
+import java.util.TimerTask;
+
+public class GameTimerTask extends TimerTask
 {
     //make Game and GameView
     private Game game ;
@@ -25,7 +27,7 @@ public class GameTimerTask
         {
             game.getShapes()[x].move();;
         }
-        
+
         gameView.postInvalidate();
     }
 
