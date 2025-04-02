@@ -22,12 +22,7 @@ public class GameTimerTask extends TimerTask
     //method runs the view
     public void run()
     {
-        //move all 20 shapes
-        for(int x =0 ; x<game.getShapes().length ; x++)
-        {
-            game.move();
-        }
-
+        game.move();
         gameView.postInvalidate();
     }
 
