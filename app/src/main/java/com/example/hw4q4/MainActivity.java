@@ -8,17 +8,36 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Timer;
+
+public class MainActivity extends AppCompatActivity
+{
+    private Game game ;
+    private GameView gameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        //create game
+        game = new Game();
+
+        //create game view
+        gameView = new GameView(this, game);
+
+        //set content view
+        setContentView(gameView);
+
+        //create timer
+        Timer timer = new Timer();
+
+        //create gameTimerTask
+        GameTimerTask task = new GameTimerTask(game,gameView);
+
+        //schedule task every 20ms with 0ms delay
+        timer.schedule(task, 0, 20);
+
+
+
     }
 }
